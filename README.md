@@ -4,4 +4,4 @@
 
 ### v3
 
-which prevent layout thrashing.
+fix layout thrashing
