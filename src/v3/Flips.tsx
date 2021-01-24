@@ -228,7 +228,6 @@ const Flips: React.FC<FlipsProps> = (props) => {
   }, [_children]);
 
   useLayoutEffect(() => {
-    console.log('useLayoutEffect')
     const tasks = [];
     if (parentRef.current && prevRectsRef.current) {
       const flipEles = getElementByFlipIdAll(parentRef.current);
@@ -241,6 +240,9 @@ const Flips: React.FC<FlipsProps> = (props) => {
         if (flipId && flipEle) {
           removeClass(flipEle as HTMLElement, moveClass);
           nextRects[flipId] = relativeRect(parentRef.current, flipEle as HTMLElement);
+          if (!prevRectsRef.current[flipId]) {
+            prevRectsRef.current[flipId] = nextRects[flipId];
+          }
         }
       }
       // 计算之前样式与现在的样式的差，并设置样式
@@ -281,7 +283,7 @@ const Flips: React.FC<FlipsProps> = (props) => {
         task();
       }
     }
-  }, [children]);
+  });
 
   const ChildNode = Object.values(children);
 
