@@ -1,4 +1,4 @@
-## React Transition v2
+## React Transition v3
 
 ```shell
 npm install react-flip-transition
@@ -6,6 +6,6 @@ npm install react-flip-transition
 
 - [Docs](https://peoplesing1832.github.io/flip/)
 
-### v3
+### v4
 
-fix layout thrashing
+Optimize the code
