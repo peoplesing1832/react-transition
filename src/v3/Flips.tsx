@@ -239,6 +239,7 @@ const Flips: React.FC<FlipsProps> = (props) => {
         if (flipId && flipEle) {
           // (flipEle as HTMLElement).style.transition = 'none' 计算最新的样式存在一些问题
           // 其实Vue本身也是有问题的，如果不止在moveclass上添加的transtion是有问题的
+          // 如果不单单是move上有transtion，也会有闪烁的问题
           (flipEle as HTMLElement).style.transition = 'none'
           nextRects[flipId] = relativeRect(parentRef.current, flipEle as HTMLElement);
           if (!prevRectsRef.current[flipId]) {
