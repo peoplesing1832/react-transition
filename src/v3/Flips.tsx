@@ -42,7 +42,6 @@ const Flips: React.FC<FlipsProps> = (props) => {
   }, []);
 
   const relativeRect = useCallback((parent: HTMLElement, child: HTMLElement): DOMRect => {
-    reflow();
     const parentRect = parent.getBoundingClientRect();
     let rect = child.getBoundingClientRect();
     rect.x = parentRect.x - rect.x;
