@@ -83,9 +83,9 @@ const Flip: React.FC<FlipProps> = (props) => {
     if (flipEle && prevRectRef.current) {
       const moveClass = `${name}-move`;
       const parent = getParent(flipEle);
-      flipEle.style.transition = flipEle.style.webkitTransition = 'none';
+      // flipEle.style.transition = flipEle.style.webkitTransition = 'none';
       const nextRect = relativeRect(parent, flipEle);
-      flipEle.style.transition = flipEle.style.webkitTransition = '';
+      // flipEle.style.transition = flipEle.style.webkitTransition = '';
       const prevRect = prevRectRef.current;
       const x = nextRect.x - prevRect.x;
       const y = nextRect.y - prevRect.y;
